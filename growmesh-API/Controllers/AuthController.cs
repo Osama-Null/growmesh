@@ -1,4 +1,4 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using growmesh_API.DTOs;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-namespace growmesh_API.Controllers
+public class AuthService
 {
     public class AuthController : ControllerBase
     {
@@ -87,4 +87,6 @@ namespace growmesh_API.Controllers
             return token;
         }
     }
-}
+    var tokenHandler = new JwtSecurityTokenHandler();
+        return tokenHandler.WriteToken(token);
+    }
